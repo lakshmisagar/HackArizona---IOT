@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Shrinivas on 14-01-2017.
+ * Created by Shrinivas on 14-01-2017
  */
 
 public class TrainResponse {
