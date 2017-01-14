@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PlanYourTrip</string>
+    <string name="google_maps_key">AIzaSyBbTN4CKjj7kTxg8z3bZGqplpYBddHcIlA</string>
+
+    <string name="hotel_location">City</string>
+    <string name="hotel_check_in">Check in</string>
+    <string name="hotel_check_out">Check out</string>
 </resources>
