@@ -1,7 +1,9 @@
-package planyourtrip.com.planyourtrip;
+package planyourtrip.com.planyourtrip.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import planyourtrip.com.planyourtrip.R;
 
 public class HomeActivity extends AppCompatActivity {
 
