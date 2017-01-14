@@ -13,15 +13,7 @@ public class TrainResponse {
     private ArrayList<HashMap<String,Object>> results = new ArrayList<HashMap<String, Object>>();
     private HashMap<String, StationDetails> origin = new HashMap<String, StationDetails>();
     private HashMap<String, StationDetails> destination = new HashMap<String, StationDetails>();
-    private ArrayList<HashMap<String,Trains>> itineraries = new ArrayList<HashMap<String, Trains>>();
-
-    public ArrayList<HashMap<String, Trains>> getItineraries() {
-        return itineraries;
-    }
-
-    public void setItineraries(ArrayList<HashMap<String, Trains>> itineraries) {
-        this.itineraries = itineraries;
-    }
+    private ArrayList<Trains> itineraries = new ArrayList<Trains>();
 
     public ArrayList<HashMap<String, Object>> getResults() {
         return results;
@@ -46,6 +38,14 @@ public class TrainResponse {
     public void setDestination(HashMap<String, StationDetails> destination) {
         this.destination = destination;
     }
+
+    public ArrayList<Trains> getItineraries() {
+        return itineraries;
+    }
+
+    public void setItineraries(ArrayList<Trains> itineraries) {
+        this.itineraries = itineraries;
+    }
 }
 
 class StationDetails {
@@ -59,16 +59,24 @@ class StationDetails {
     public void setStation_id(String station_id) {
         this.station_id = station_id;
     }
+
+    public String getStation_name() {
+        return station_name;
+    }
+
+    public void setStation_name(String station_name) {
+        this.station_name = station_name;
+    }
 }
 
 class Trains {
-    private ArrayList<HashMap<String,TrainDetails>> trains = new ArrayList<HashMap<String, TrainDetails>>();
+    private ArrayList<TrainDetails> trains = new ArrayList<TrainDetails>();
 
-    public ArrayList<HashMap<String, TrainDetails>> getTrains() {
+    public ArrayList<TrainDetails> getTrains() {
         return trains;
     }
 
-    public void setTrains(ArrayList<HashMap<String, TrainDetails>> trains) {
+    public void setTrains(ArrayList<TrainDetails> trains) {
         this.trains = trains;
     }
 }
@@ -161,13 +169,8 @@ class PriceDetails {
     private String service_class = null;
     private String booking_code = null;
     private String accomodation = null;
-    private HashMap<String,String> total_price = null;
-    private String amount = null;
-    private String currency = null;
-    private HashMap<String,String> rate = null;
-    private String rate_code = null;
-    private String rate_name = null;
-    private String restrictions = null;
+    private TotalPrice total_price = null;
+    private Rate rate = null;
 
     public String getService_class() {
         return service_class;
@@ -193,13 +196,26 @@ class PriceDetails {
         this.accomodation = accomodation;
     }
 
-    public HashMap<String, String> getTotal_price() {
+    public TotalPrice getTotal_price() {
         return total_price;
     }
 
-    public void setTotal_price(HashMap<String, String> total_price) {
+    public void setTotal_price(TotalPrice total_price) {
         this.total_price = total_price;
     }
+
+    public Rate getRate() {
+        return rate;
+    }
+
+    public void setRate(Rate rate) {
+        this.rate = rate;
+    }
+}
+
+class TotalPrice {
+    private String amount = null;
+    private String currency = null;
 
     public String getAmount() {
         return amount;
@@ -208,22 +224,12 @@ class PriceDetails {
     public void setAmount(String amount) {
         this.amount = amount;
     }
+}
 
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
-    public HashMap<String, String> getRate() {
-        return rate;
-    }
-
-    public void setRate(HashMap<String, String> rate) {
-        this.rate = rate;
-    }
+class Rate {
+    private String rate_code = null;
+    private String rate_name = null;
+    private String restrictions = null;
 
     public String getRate_code() {
         return rate_code;
