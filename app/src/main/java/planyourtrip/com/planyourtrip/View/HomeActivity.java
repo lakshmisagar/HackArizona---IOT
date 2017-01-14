@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import planyourtrip.com.planyourtrip.Network.DataProvider;
 import planyourtrip.com.planyourtrip.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         myAnim.setInterpolator(interpolator);
 
         button.startAnimation(myAnim);
+        DataProvider.getInstance(this).getFlights();
     }
     public void carTap(View view) {
         ImageButton button = (ImageButton)findViewById(R.id.car);
