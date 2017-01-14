@@ -35,8 +35,8 @@ public class DataProvider {
         this.context = context;
     }
 
-    public void getFlights(){
-        String  getFlightsUri = CustomUri.FlightsUri.getExtensiveQueryUrl().toString();
+    public void getFlights(String originCityCode, String destCityCode, String departDate, String returnDate, int priceLimit){
+        String  getFlightsUri = CustomUri.FlightsUri.getExtensiveQueryUrl(originCityCode, destCityCode, departDate, returnDate, priceLimit).toString();
         Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
