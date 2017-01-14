@@ -5,22 +5,6 @@ package planyourtrip.com.planyourtrip.Model;
  */
 
 public class Constants {
-    /* Flight key constants for json object*/
-    public static String FLIGHT_KEY_ORIGIN = "origin";
-
-    public static String FLIGHT_KEY_CURRENCY = "currency";
-
-    public static String FLIGHT_KEY_RESULTS = "results";
-
-    public static String FLIGHT_KEY_DESTINATION = "destination";
-
-    public static String FLIGHT_KEY_DEPARTURE_DATE = "departure_date";
-
-    public static String FLIGHT_KEY_RETURN_DATE = "return_date";
-
-    public static String FLIGHT_KEY_PRICE = "price";
-
-    public static String FLIGHT_KEY_AIRLINE = "airline";
 
     /* Train key constants for json object*/
 

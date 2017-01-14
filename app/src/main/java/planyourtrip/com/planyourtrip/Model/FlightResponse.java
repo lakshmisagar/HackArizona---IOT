@@ -1,7 +1,5 @@
 package planyourtrip.com.planyourtrip.Model;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,96 +10,86 @@ import java.util.HashMap;
 
 public class FlightResponse {
 
-    private String valueOrigin = null;
+    private String origin = null;
 
-    private String valueCurrency = null;
+    private String currency = null;
 
-    private ArrayList<HashMap<String, String>> valueResults = new ArrayList<HashMap<String, String>>();
+    private ArrayList<Result> results = new ArrayList<Result>();
 
-    private String valueDestination = null;
-
-    private String valueDepartureDate = null;
-
-    private String valueReturnDate = null;
-
-    private String valuePrice = null;
-
-    private String valueAirline = null;
-
-
-    private HashMap<String,Object> response = new HashMap<String, Object>();
-
-
-    public HashMap<String, Object> getResponse() {
-        return response;
+    public String getCurrency() {
+        return currency;
     }
 
-    public void setResponse(HashMap<String, Object> response) {
-        this.response = response;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
-    public String getValueOrigin() {
-        return valueOrigin;
+    public String getOrigin() {
+        return origin;
     }
 
-    public void setValueOrigin(String valueOrigin) {
-        this.valueOrigin = valueOrigin;
+    public void setOrigin(String origin) {
+        this.origin = origin;
     }
 
-    public String getValueCurrency() {
-        return valueCurrency;
+    public ArrayList<Result> getResults() {
+        return results;
     }
 
-    public void setValueCurrency(String valueCurrency) {
-        this.valueCurrency = valueCurrency;
+    public void setResults(ArrayList<Result> results) {
+        this.results = results;
+    }
+}
+
+class Result {
+
+    private String destination = null;
+
+    private String departure_date = null;
+
+    private String return_date = null;
+
+    private String price = null;
+
+    private String airline = null;
+
+    public String getDestination() {
+        return destination;
     }
 
-    public ArrayList<HashMap<String,String>> getValueResults() {
-        return valueResults;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
-    public void setValueResults(ArrayList<HashMap<String, String>> valueResults) {
-        this.valueResults = valueResults;
+    public String getDeparture_date() {
+        return departure_date;
     }
 
-    public String getValueDestination() {
-        return valueDestination;
+    public void setDeparture_date(String departure_date) {
+        this.departure_date = departure_date;
     }
 
-    public void setValueDestination(String valueDestination) {
-        this.valueDestination = valueDestination;
+    public String getReturn_date() {
+        return return_date;
     }
 
-    public Date getValueDepartureDate() {
-        return DateConveter.getDate(valueDepartureDate);
+    public void setReturn_date(String return_date) {
+        this.return_date = return_date;
     }
 
-    public void setValueDepartureDate(String valueDepartureDate) {
-        this.valueDepartureDate = valueDepartureDate;
+    public String getPrice() {
+        return price;
     }
 
-    public Date getValueReturnDate() {
-        return DateConveter.getDate(valueReturnDate);
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public void setValueReturnDate(String valueReturnDate) {
-        this.valueReturnDate = valueReturnDate;
+    public String getAirline() {
+        return airline;
     }
 
-    public String getValuePrice() {
-        return valuePrice;
+    public void setAirline(String airline) {
+        this.airline = airline;
     }
-
-    public void setValuePrice(String valuePrice) {
-        this.valuePrice = valuePrice;
-    }
-
-    public String getValueAirline() {
-        return valueAirline;
-    }
-
-    public void setValueAirline(String valueAirline) {
-        this.valueAirline = valueAirline;
-    }
-
 }
