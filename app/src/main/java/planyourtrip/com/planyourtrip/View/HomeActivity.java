@@ -46,20 +46,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         }, myAnim.getDuration());
         button.startAnimation(myAnim);
-        Response.ErrorListener errorListener = new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        };
-
-        Response.Listener<List<AirportDetails>> listener = new Response.Listener<List<AirportDetails>>() {
-            @Override
-            public void onResponse(List<AirportDetails> response) {
-                Log.d("Response", "Flights Received");
-            }
-        };
-        DataProvider.getInstance(this).getAirports("Bo", errorListener, listener);
     }
     public void carTap(final View view) {
         ImageButton button = (ImageButton)findViewById(R.id.car);

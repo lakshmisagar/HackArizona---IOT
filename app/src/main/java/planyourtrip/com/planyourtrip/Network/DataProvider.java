@@ -51,9 +51,9 @@ public class DataProvider {
         getRequestQueue().add(getOutFlights);
     }
 
-    public void getAirports(String searchTerm, Response.ErrorListener errorListener, Response.Listener<List<AirportDetails>> listener){
+    public void getAirports(String searchTerm, Response.ErrorListener errorListener, Response.Listener<AirportDetails[]> listener){
         String getAirports = CustomUri.FlightsUri.getAirports(searchTerm).toString();
-        GsonRequest<Airports> getAirportsRequest = new GsonRequest<>(Request.Method.GET, Airports.class, getAirports, errorListener, listener);
+        GsonRequest<AirportDetails[]> getAirportsRequest = new GsonRequest<>(Request.Method.GET, AirportDetails[ ].class, getAirports, errorListener, listener);
         getRequestQueue().add(getAirportsRequest);
     }
     private RequestQueue getRequestQueue(){
