@@ -14,4 +14,7 @@ public abstract class BaseUri {
     public static String param_origin = "origin";
     public static String param_destination = "destination";
     public static String param_departure_date = "departure_date";
+
+    public static String param_latitude = "latitude";
+    public static String param_longitude = "longitude";
 }
