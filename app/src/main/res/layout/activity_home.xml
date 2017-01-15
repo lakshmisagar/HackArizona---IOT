@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/cardview_light_background">
+    android:background="@mipmap/travel">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="@color/cardview_light_background"
+            android:background="#00ffffff"
             android:elevation="15dp"
             android:onClick="flightTap"
             android:src="@mipmap/flight" />
@@ -29,7 +29,7 @@
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_toRightOf="@id/flight"
-            android:background="@color/cardview_light_background"
+            android:background="#00ffffff"
             android:elevation="15dp"
             android:onClick="carTap"
             android:src="@mipmap/car" />
@@ -41,7 +41,7 @@
             android:layout_below="@id/flight"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="@color/cardview_light_background"
+            android:background="#00ffffff"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:elevation="15dp"
             android:onClick="trainTap"
@@ -57,7 +57,7 @@
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_toRightOf="@id/train"
-            android:background="@color/cardview_light_background"
+            android:background="#00ffffff"
             android:elevation="15dp"
             android:onClick="hotelTap"
             android:src="@mipmap/hotel" />

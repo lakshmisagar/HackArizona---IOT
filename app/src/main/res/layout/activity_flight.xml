@@ -100,18 +100,22 @@
             />
     </RelativeLayout>
 
-    <Button
+    <android.support.v7.widget.AppCompatSeekBar
         android:id="@+id/search"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/search_flight"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/cardview_light_background"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:indeterminate="false"
+        android:max="10"
+        android:secondaryProgress="1"
+        android:thumb="@mipmap/seek"
+        android:background="@color/colorPrimary"
+        android:text="@string/search_flight"
+        android:textColor="@color/cardview_light_background"
+        android:layout_alignParentBottom="true"
         android:textAlignment="center"/>
 
 </RelativeLayout>

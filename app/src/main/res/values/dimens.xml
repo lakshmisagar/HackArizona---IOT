@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_flight_margin">26dp</dimen>
     <dimen name="activity_flight_left_margin">5dp</dimen>
+    <dimen name="activity_search_margin">20dp</dimen>
 </resources>

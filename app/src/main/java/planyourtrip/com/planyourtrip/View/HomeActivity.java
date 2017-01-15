@@ -4,21 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-
-import java.util.List;
-
-import planyourtrip.com.planyourtrip.Model.AirportDetails;
-import planyourtrip.com.planyourtrip.Model.Airports;
-import planyourtrip.com.planyourtrip.Network.DataProvider;
 import planyourtrip.com.planyourtrip.R;
 
 public class HomeActivity extends AppCompatActivity {

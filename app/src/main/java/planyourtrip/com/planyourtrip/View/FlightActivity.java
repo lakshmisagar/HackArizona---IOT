@@ -1,10 +1,12 @@
 package planyourtrip.com.planyourtrip.View;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatSeekBar;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -34,7 +37,7 @@ public class FlightActivity extends AppCompatActivity implements AnimationListen
     Animation slideLeft, slideRight, slideTop, slideBottom;
     RelativeLayout src,dst;
     TextView Seldate;
-    Button search;
+    AppCompatSeekBar search;
 
     EditText srcInput;
     EditText destInput;
@@ -46,7 +49,29 @@ public class FlightActivity extends AppCompatActivity implements AnimationListen
         src = (RelativeLayout) findViewById(R.id.src);
         dst = (RelativeLayout) findViewById(R.id.dst);
         Seldate = (TextView) findViewById(R.id.selcted_date);
-        search = (Button) findViewById(R.id.search);
+        search = (AppCompatSeekBar) findViewById(R.id.search);
+        search.setMax(10);
+        search.setProgress(1);
+        search.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //add here your implementation
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                //add here your implementation
+            }
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                if(progress==8){
+                    Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(i);
+                }
+            }
+        });
+
         srcInput = (EditText) findViewById(R.id.source);
         destInput = (EditText) findViewById(R.id.destination);
         slideLeft = AnimationUtils.loadAnimation(getApplicationContext(),
