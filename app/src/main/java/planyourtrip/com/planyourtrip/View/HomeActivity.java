@@ -1,6 +1,8 @@
 package planyourtrip.com.planyourtrip.View;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -27,14 +29,22 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
-    public void flightTap(View view) {
+    public void flightTap(final View view) {
         ImageButton button = (ImageButton)findViewById(R.id.flight);
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         // Use bounce interpolator with amplitude 0.2 and frequency 20
         MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
         myAnim.setInterpolator(interpolator);
-
+        final Intent intent=new Intent(view.getContext(),FlightActivity.class);
+        myAnim.setDuration(1000);
+        button.startAnimation(myAnim);
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                view.clearAnimation();
+                startActivity(intent);
+            }
+        }, myAnim.getDuration());
         button.startAnimation(myAnim);
         Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
@@ -51,17 +61,23 @@ public class HomeActivity extends AppCompatActivity {
         };
         DataProvider.getInstance(this).getAirports("Bo", errorListener, listener);
     }
-    public void carTap(View view) {
+    public void carTap(final View view) {
         ImageButton button = (ImageButton)findViewById(R.id.car);
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         // Use bounce interpolator with amplitude 0.2 and frequency 20
         MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
         myAnim.setInterpolator(interpolator);
-
+        myAnim.setDuration(1000);
         button.startAnimation(myAnim);
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                view.clearAnimation();
+                //startActivity(intent);
+            }
+        }, myAnim.getDuration());
     }
-    public void trainTap(View view) {
+    public void trainTap(final View view) {
         ImageButton button = (ImageButton)findViewById(R.id.train);
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
@@ -69,16 +85,29 @@ public class HomeActivity extends AppCompatActivity {
         MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
         myAnim.setInterpolator(interpolator);
 
+        myAnim.setDuration(1000);
         button.startAnimation(myAnim);
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                view.clearAnimation();
+                //startActivity(intent);
+            }
+        }, myAnim.getDuration());
     }
-    public void hotelTap(View view) {
+    public void hotelTap(final View view) {
         ImageButton button = (ImageButton)findViewById(R.id.hotel);
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         // Use bounce interpolator with amplitude 0.2 and frequency 20
         MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
         myAnim.setInterpolator(interpolator);
-
+        myAnim.setDuration(1000);
         button.startAnimation(myAnim);
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                view.clearAnimation();
+                //startActivity(intent);
+            }
+        }, myAnim.getDuration());
     }
 }
