@@ -3,6 +3,11 @@
     package="planyourtrip.com.planyourtrip">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="andorid.permission.ACCESS_COARSE_LOCATION" />
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".View.FlightActivity"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBJFa7vZoQZrPe3h3EtSKzhVace4TJ0mEM"/>
     </application>
 
 </manifest>
